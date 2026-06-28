@@ -1,4 +1,0 @@
-analyise the portfolio 
-and make its focus not only kitchens. kitchens, dressing rooms + more of the home. also i think it should not be a single page with all the info and all the nav menu items to go to sections of the same page
-make different pages
-fix any css mistakes and styles
