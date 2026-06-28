@@ -1,0 +1,65 @@
+/* Global styles — Interior Designer Portfolio */
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Remove default focus rings, replace with styled ones */
+*:focus-visible {
+  outline: 2px solid #B8645C;
+  outline-offset: 2px;
+}
+
+/* Better image rendering */
+img {
+  image-rendering: -webkit-optimize-contrast;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #633A2C;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #B8645C;
+}
+
+/* Prevent layout shift from scrollbar */
+html {
+  overflow-y: scroll;
+}
+
+/* Selection color */
+::selection {
+  background: #B8645C40;
+  color: #2C1E1B;
+}
+
+/* Page transition overlay prevention */
+body {
+  overflow-x: hidden;
+}
+
+/* Ensure motion reduced users don't get animations */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Responsive utility — hide scrollbar on mobile overlay */
+@media (max-width: 768px) {
+  .mobile-no-scroll {
+    overflow: hidden;
+  }
+}
