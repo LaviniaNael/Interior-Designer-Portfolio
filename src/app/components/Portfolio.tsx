@@ -4,9 +4,9 @@ import { Link } from "react-router";
 import { X, Maximize2, ChevronLeft, ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 
-// Dynamically import all images from ../work/ directory (re-triggered glob)
+// Dynamically import all images from ../work/ directory
 // @ts-ignore
-const imageModules = import.meta.glob('../work/**/*.{jpeg,jpg,png,webp,JPEG,JPG,PNG,WEBP}', { eager: true }) as Record<string, any>;
+const imageModules = import.meta.glob('../work/**/*.{jpeg,jpg,png,webp,JPEG,JPG,PNG,WEBP}', { eager: true, query: '?url' }) as Record<string, { default: string }>;
 
 interface GalleryItem {
   id: string;
