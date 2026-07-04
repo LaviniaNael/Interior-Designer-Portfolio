@@ -4,9 +4,9 @@ import { Link, useLocation } from "react-router";
 import { motion, AnimatePresence } from "motion/react";
 
 const navLinks = [
+  { name: "Work", path: "/work" },
   { name: "About", path: "/about" },
-  { name: "What I Do", path: "/services" },
-  { name: "Contact", path: "/contact" }
+  { name: "What I Do", path: "/services" }
 ];
 
 export function Navigation() {
@@ -26,6 +26,15 @@ export function Navigation() {
   }, [location.pathname]);
 
   const closeMenu = () => setMenuOpen(false);
+
+  const scrollToFooter = (e: React.MouseEvent) => {
+    e.preventDefault();
+    const footer = document.getElementById("footer");
+    if (footer) {
+      footer.scrollIntoView({ behavior: "smooth" });
+    }
+    closeMenu();
+  };
 
   const isHome = location.pathname === "/";
   const navBgClass = (scrolled || !isHome || menuOpen)
@@ -70,13 +79,6 @@ export function Navigation() {
                 />
               </Link>
             ))}
-            <Link
-              to="/contact"
-              className={`group relative overflow-hidden border transition-all duration-300 text-xs uppercase tracking-widest px-5 py-2 lg:px-6 lg:py-2.5 ${buttonBorder}`}
-              style={{ fontFamily: "'Jost', sans-serif", letterSpacing: "0.15em" }}
-            >
-              <span className="relative z-10">Let's Chat</span>
-            </Link>
           </div>
 
           {/* Hamburger */}
@@ -136,6 +138,12 @@ export function Navigation() {
                   </Link>
                 </motion.div>
               ))}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.25 + navLinks.length * 0.07, ease: [0.22, 1, 0.36, 1] }}
+              >
+              </motion.div>
             </div>
 
             <motion.div

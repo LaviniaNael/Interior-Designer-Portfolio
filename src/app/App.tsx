@@ -7,7 +7,6 @@ import { Portfolio } from "./components/Portfolio";
 import { About } from "./components/About";
 import { Services } from "./components/Services";
 // import { Testimonials } from "./components/Testimonials";
-import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
 import { LoadingScreen } from "./components/LoadingScreen";
 import { useEffect, useState, useCallback } from "react";
@@ -30,7 +29,7 @@ function Home() {
   return (
     <PageTransition>
       <Hero />
-      <Portfolio />
+      <Portfolio isHomepage={true} />
       {/* <Testimonials /> */}
     </PageTransition>
   );
@@ -49,7 +48,16 @@ export default function App() {
 
   // Scroll to top on route change
   useEffect(() => {
-    window.scrollTo(0, 0);
+    const handleScroll = () => {
+      window.scrollTo(0, 0);
+      document.documentElement.scrollTo(0, 0);
+      document.body.scrollTo(0, 0);
+    };
+
+    handleScroll();
+    // Small timeout to ensure it scrolls to top after AnimatePresence transitions begin
+    const timer = setTimeout(handleScroll, 50);
+    return () => clearTimeout(timer);
   }, [location.pathname]);
 
   return (
@@ -68,9 +76,9 @@ export default function App() {
           <AnimatePresence mode="wait">
             <Routes location={location} key={location.pathname}>
               <Route path="/" element={<Home />} />
+              <Route path="/work" element={<PageTransition><Portfolio isHomepage={false} /></PageTransition>} />
               <Route path="/about" element={<PageTransition><About /></PageTransition>} />
               <Route path="/services" element={<PageTransition><Services /></PageTransition>} />
-              <Route path="/contact" element={<PageTransition><Contact /></PageTransition>} />
             </Routes>
           </AnimatePresence>
         </div>

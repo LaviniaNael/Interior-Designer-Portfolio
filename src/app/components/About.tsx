@@ -1,18 +1,22 @@
 import { motion } from "motion/react";
 import { useRef } from "react";
+import donnaImg from "../donna.webp";
 
 const awards = [
+  { year: "2025-Now", title: "Interior Designer", body: "Qabany (Residential design & layout plans)" },
+  { year: "2024-2025", title: "Office Administrator", body: "Mix Luxury (Dubai) - Remote coordination" },
+  { year: "2024", title: "Interior Designer", body: "Values Home Furniture - Cairo" },
+  { year: "2023", title: "Sales & Customer Support", body: "Matiliano & Dawood Investment" },
   { year: "2022", title: "Bachelor of Art Education", body: "Minya University" },
-  { year: "2022-Now", title: "Décor Diploma", body: "Internal design & AutoCAD 3D Max, Makan Company" },
-  { year: "2021-2022", title: "Arts Workshops", body: "Adults and children workshops at Minya" },
-  { year: "2017-Now", title: "Volunteer Experience", body: "Scout organizing and community development" },
+  { year: "2022", title: "Professional Diploma in Interior Design", body: "Makan Training Center" },
+  { year: "2021-Now", title: "Freelance Designer & Art Projects", body: "Cultural Palaces, Governorate Theater, YMCA Minya Gallery" },
 ];
 
 const stats = [
-  { value: "4+", label: "Years experience" },
+  { value: "5+", label: "Years experience" },
   { value: "2", label: "Design Degrees" },
-  { value: "1", label: "Country" },
-  { value: "5+", label: "Workshops led" },
+  { value: "6+", label: "Professional Roles" },
+  { value: "10+", label: "Workshops led" },
 ];
 
 // Fade-up helper
@@ -41,7 +45,7 @@ export function About() {
             <div className="relative" ref={imgRef}>
               <div className="relative overflow-hidden group" style={{ aspectRatio: "3/4" }}>
                 <img
-                  src="https://images.unsplash.com/photo-1631377307475-9acfa929b062?w=700&h=930&fit=crop&auto=format"
+                  src={donnaImg}
                   alt="Madonna Nassif, interior designer"
                   className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                 />
@@ -106,13 +110,13 @@ export function About() {
               {...fadeUp(0.2)}
             >
               <p>
-                I'm Madonna Nassif — an Egyptian interior designer and recent Bachelor of Art Education graduate based in Cairo. I'm passionate about blending internal design with the broader arts field.
+                I'm Madonna Nassif — an Egyptian interior designer and Art Education graduate from Minya University, now based in Cairo. I am passionate about transforming ideas into functional, aesthetic, and client-tailored spaces.
               </p>
               <p>
-                My professional journey has taken me through interior design roles at Matiliano, freelance décor for cultural palaces and governmental buildings in Minya, as well as stage decoration for the Minya governorate theater.
+                Currently, I work as an Interior Designer at Qabany. My professional background covers residential space planning at Values Home Furniture, remote office operations for Mix Luxury (Dubai), customer service support at Matiliano, and sales consulting at Dawood Investment.
               </p>
               <p>
-                Beyond design, I am deeply involved in my community. Since 2017, I've volunteered to organize scout camps and lead creative arts workshops, helping to support human development and serve communities across Egypt.
+                Additionally, since 2021 I have been active in freelance design and community art initiatives. This includes designing sets for the Minya Governorate Theater, governmental buildings, and organizing creative workshops at the YMCA Minya gallery.
               </p>
             </motion.div>
 
@@ -154,7 +158,7 @@ export function About() {
                 className="text-[#2C1E1B] text-xs uppercase tracking-widest mb-5"
                 style={{ fontFamily: "'Jost', sans-serif", letterSpacing: "0.15em" }}
               >
-                Recognition
+                Experience & Education
               </p>
               <div className="space-y-4">
                 {awards.map((a, i) => (

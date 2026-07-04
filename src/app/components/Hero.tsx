@@ -31,11 +31,11 @@ export function Hero() {
       <div className="absolute inset-0 bg-gradient-to-b from-[#1A1110]/20 via-transparent to-[#1A1110]/60" />
 
       {/* Main content */}
-      <div className="relative z-10 flex flex-col justify-end min-h-screen pb-16 sm:pb-20 px-6 sm:px-8 md:px-20 max-w-7xl mx-auto">
+      <div className="relative z-10 flex flex-col justify-center min-h-screen pt-25 sm:pb-20 px-6 sm:px-8 md:px-20 max-w-7xl mx-auto">
         <div className="max-w-3xl">
           {/* Label */}
           <motion.p
-            className="text-[#DDBEA9] text-xs uppercase tracking-widest mb-6"
+            className="text-white text-xs uppercase tracking-widest mb-6"
             style={{ fontFamily: "'Jost', sans-serif", letterSpacing: "0.2em" }}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
