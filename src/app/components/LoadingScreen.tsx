@@ -44,14 +44,14 @@ export function LoadingScreen({ onComplete }: { onComplete: () => void }) {
           {/* Top curtain panel */}
           <motion.div
             className="fixed inset-x-0 top-0 z-[200] bg-[#2C1E1B] origin-top"
-            style={{ height: "50vh" }}
+            style={{ height: "calc(50vh + 1px)" }}
             animate={phase === "reveal" ? { scaleY: 0 } : { scaleY: 1 }}
             transition={{ duration: 0.75, ease: [0.76, 0, 0.24, 1] }}
           />
           {/* Bottom curtain panel */}
           <motion.div
             className="fixed inset-x-0 bottom-0 z-[200] bg-[#2C1E1B] origin-bottom"
-            style={{ height: "50vh" }}
+            style={{ height: "calc(50vh + 1px)" }}
             animate={phase === "reveal" ? { scaleY: 0 } : { scaleY: 1 }}
             transition={{ duration: 0.75, ease: [0.76, 0, 0.24, 1] }}
           />

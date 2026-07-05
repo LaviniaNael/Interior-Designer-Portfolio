@@ -16,24 +16,30 @@ img {
   image-rendering: -webkit-optimize-contrast;
 }
 
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-}
-::-webkit-scrollbar-track {
-  background: transparent;
-}
-::-webkit-scrollbar-thumb {
-  background: #633A2C;
-  border-radius: 4px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #B8645C;
-}
+/* Custom scrollbar - Desktop only to avoid issues on mobile/tablets */
+@media (min-width: 1024px) {
+  /* Modern standard scrollbar properties */
+  html {
+    scrollbar-color: #633A2C transparent;
+    scrollbar-width: thin;
+    scrollbar-gutter: stable;
+  }
 
-/* Prevent layout shift from scrollbar */
-html {
-  overflow-y: scroll;
+  /* Webkit custom scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #633A2C;
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #B8645C;
+  }
 }
 
 /* Selection color */
