@@ -249,6 +249,32 @@ export function Portfolio({ isHomepage = false }: PortfolioProps) {
                     src={item.src}
                     alt={item.fileName}
                     loading="lazy"
+                    width={
+                      item.category === "kitchen" || 
+                      item.fileName.includes("dressing-1") || 
+                      item.fileName.includes("dressing-5") || 
+                      item.fileName.includes("dressing-9") || 
+                      item.fileName.includes("dressing-10") || 
+                      item.fileName.includes("dressing-13") || 
+                      item.fileName.includes("dressing-14") || 
+                      item.fileName.includes("dressing-17") || 
+                      item.fileName.includes("dressing-18") 
+                        ? 800 
+                        : 600
+                    }
+                    height={
+                      item.category === "kitchen" || 
+                      item.fileName.includes("dressing-1") || 
+                      item.fileName.includes("dressing-5") || 
+                      item.fileName.includes("dressing-9") || 
+                      item.fileName.includes("dressing-10") || 
+                      item.fileName.includes("dressing-13") || 
+                      item.fileName.includes("dressing-14") || 
+                      item.fileName.includes("dressing-17") || 
+                      item.fileName.includes("dressing-18") 
+                        ? 600 
+                        : 800
+                    }
                     className="w-full h-auto object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                   />
                   
@@ -277,7 +303,7 @@ export function Portfolio({ isHomepage = false }: PortfolioProps) {
           <div className="flex justify-center mt-12">
             <Link
               to="/work"
-              className="group relative overflow-hidden bg-[#B8645C] text-[#EBE3CD] text-xs uppercase tracking-widest px-8 py-4 transition-all duration-300 cursor-pointer shadow-md"
+              className="group relative overflow-hidden bg-[#8B453E] text-[#EBE3CD] text-xs uppercase tracking-widest px-8 py-4 transition-all duration-300 cursor-pointer shadow-md"
               style={{ fontFamily: "'Jost', sans-serif", letterSpacing: "0.15em" }}
             >
               <span className="relative z-10">See More Work</span>

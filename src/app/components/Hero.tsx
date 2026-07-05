@@ -23,6 +23,8 @@ export function Hero() {
         <img
           src="https://images.unsplash.com/photo-1722605090433-41d1183a792d?w=1800&h=1200&fit=crop&auto=format"
           alt="Elegant interior with marble countertops and custom cabinetry"
+          width={1800}
+          height={1200}
           className="w-full h-full object-cover opacity-90"
         />
       </div>
@@ -72,7 +74,7 @@ export function Hero() {
           >
             <button
               onClick={() => document.getElementById("work")?.scrollIntoView({ behavior: "smooth" })}
-              className="group relative overflow-hidden bg-[#B8645C] text-[#EBE3CD] text-xs uppercase tracking-widest px-8 py-4 transition-all duration-300 cursor-pointer"
+              className="group relative overflow-hidden bg-[#8B453E] text-[#EBE3CD] text-xs uppercase tracking-widest px-8 py-4 transition-all duration-300 cursor-pointer"
               style={{ fontFamily: "'Jost', sans-serif", letterSpacing: "0.15em" }}
             >
               <span className="relative z-10">View Portfolio</span>
