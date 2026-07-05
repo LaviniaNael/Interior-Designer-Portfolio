@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://madonna-nassif.vercel.app/sitemap.xml

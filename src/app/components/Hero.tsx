@@ -21,7 +21,9 @@ export function Hero() {
       {/* Parallax image */}
       <div ref={imgRef} className="absolute inset-0 scale-110">
         <img
-          src="https://images.unsplash.com/photo-1722605090433-41d1183a792d?w=1800&h=1200&fit=crop&auto=format"
+          src="https://images.unsplash.com/photo-1722605090433-41d1183a792d?w=800&h=534&fit=crop&auto=format"
+          srcSet="https://images.unsplash.com/photo-1722605090433-41d1183a792d?w=600&h=400&fit=crop&auto=format 600w, https://images.unsplash.com/photo-1722605090433-41d1183a792d?w=800&h=534&fit=crop&auto=format 800w, https://images.unsplash.com/photo-1722605090433-41d1183a792d?w=1200&h=800&fit=crop&auto=format 1200w, https://images.unsplash.com/photo-1722605090433-41d1183a792d?w=1800&h=1200&fit=crop&auto=format 1800w"
+          sizes="100vw"
           alt="Elegant interior with marble countertops and custom cabinetry"
           width={1800}
           height={1200}
