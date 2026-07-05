@@ -8,7 +8,7 @@ export function LoadingScreen({ onComplete }: { onComplete: () => void }) {
   useEffect(() => {
     // Animate progress bar
     const start = Date.now();
-    const duration = 800;
+    const duration = 250;
     const raf = (id: number) => id;
     let frameId = raf(0);
 
@@ -28,8 +28,8 @@ export function LoadingScreen({ onComplete }: { onComplete: () => void }) {
           setTimeout(() => {
             setPhase("done");
             onComplete();
-          }, 600);
-        }, 100);
+          }, 350);
+        }, 50);
       }
     };
 
@@ -44,16 +44,16 @@ export function LoadingScreen({ onComplete }: { onComplete: () => void }) {
           {/* Top curtain panel */}
           <motion.div
             className="fixed inset-x-0 top-0 z-[200] bg-[#2C1E1B] origin-top"
-            style={{ height: "calc(50vh + 1px)" }}
+            style={{ height: "51vh" }}
             animate={phase === "reveal" ? { scaleY: 0 } : { scaleY: 1 }}
-            transition={{ duration: 0.5, ease: [0.76, 0, 0.24, 1] }}
+            transition={{ duration: 0.35, ease: [0.76, 0, 0.24, 1] }}
           />
           {/* Bottom curtain panel */}
           <motion.div
             className="fixed inset-x-0 bottom-0 z-[200] bg-[#2C1E1B] origin-bottom"
-            style={{ height: "calc(50vh + 1px)" }}
+            style={{ height: "51vh" }}
             animate={phase === "reveal" ? { scaleY: 0 } : { scaleY: 1 }}
-            transition={{ duration: 0.5, ease: [0.76, 0, 0.24, 1] }}
+            transition={{ duration: 0.35, ease: [0.76, 0, 0.24, 1] }}
           />
 
           {/* Center content (logo + progress) — fades out before reveal */}

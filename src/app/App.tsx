@@ -38,12 +38,9 @@ function Home() {
 export default function App() {
   const location = useLocation();
   const [loading, setLoading] = useState(true);
-  const [showContent, setShowContent] = useState(false);
 
   const handleLoadingComplete = useCallback(() => {
-    // Short delay so curtains fully retract before showing content
-    setTimeout(() => setShowContent(true), 100);
-    setTimeout(() => setLoading(false), 200);
+    setLoading(false);
   }, []);
 
   // Scroll to top on route change
@@ -64,12 +61,9 @@ export default function App() {
     <>
       {loading && <LoadingScreen onComplete={handleLoadingComplete} />}
 
-      <motion.div
+      <div
         className="min-h-screen bg-[#E0D6B8] flex flex-col"
         style={{ scrollBehavior: "smooth" }}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: showContent ? 1 : 0 }}
-        transition={{ duration: 0.4 }}
       >
         <Navigation />
         <div className="flex-1">
@@ -83,7 +77,7 @@ export default function App() {
           </AnimatePresence>
         </div>
         <Footer />
-      </motion.div>
+      </div>
     </>
   );
 }
