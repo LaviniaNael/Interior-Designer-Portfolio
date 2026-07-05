@@ -25,6 +25,7 @@ export function Hero() {
           alt="Elegant interior with marble countertops and custom cabinetry"
           width={1800}
           height={1200}
+          fetchpriority="high"
           className="w-full h-full object-cover opacity-90"
         />
       </div>
