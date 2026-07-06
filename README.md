@@ -8,8 +8,6 @@
 
 A premium, modern web portfolio crafted for an interior designer. The design focuses on elegance, warmth, and smooth interactivity to showcase spaces and creative arts beautifully. 
 
-> Originally inspired by [Figma Design](https://www.figma.com/design/OYgBVBKO30xlrVcNlbzV3p/Interior-Designer-Portfolio).
-
 ## ✨ The Aesthetic
 
 The aesthetic of this portfolio is meticulously designed to reflect the taste and sophistication of high-end interior design:
